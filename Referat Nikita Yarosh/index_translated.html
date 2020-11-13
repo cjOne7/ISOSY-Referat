@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="description" content="Cracking, hacking a obrana – WPA">
+	<meta name="author" content="Nikita Yarosh" lang="en">
+	<title>Cracking, hacking a obrana – WPA</title>
+
+	<style>
+		body {
+			font-family: Verdana, sans-serif;
+			border: 1px solid black;
+			width: 70%;
+			margin: 0 auto;
+			padding: 2em;
+		}
+
+		header {
+			text-align: center;
+		}
+
+		h1 {
+			margin: 0;
+			padding: 0;
+		}
+
+		.source {
+			text-align: right;
+		}
+	</style>
+</head>
+
+<body>
+<header>
+	<h1>Bezpečnost, cracking, hacking a obrana – WPA</h1>
+	<h2>Nikita Yarosh, st58310</h2>
+	<h2>Datum prezentace: 16.&nbsp;11.&nbsp;2020</h2>
+	<hr>
+</header>
+<main>
+	<nav class="nav">
+		<h2>Obsah</h2>
+		<ul>
+			<li><a href="#coJeWep">Co je WEP?</a></li>
+			<li><a href="#coJeWpa">Co je WPA?</a></li>
+			<li><a href="#coJeWpa2">Co je WPA2?</a></li>
+			<li><a href="#coJeWpa3">Co je WPA3?</a></li>
+			<li><a href="#spkVsEnterprise">WPA-PSK vs. WPA-Enterprise</a></li>
+			<li><a href="#slovniky">Slovníky</a>
+				<ul>
+					<li>1</li>
+					<li>2</li>
+				</ul>
+			</li>
+			<li><a href="#moznostiProlomeni">Možnosti prolomení</a>
+				<ul>
+					<li><a href="#bruteForce">Brute-force</a></li>
+					<li><a href="#krack">Útok pomocí metody KRACK</a></li>
+					<li><a href="#ssid">Útok pomocí nastavení stejného SSID na falešném AP</a></li>
+					<li><a href="#socialIng">Krádež hesla pomoci sociálního inženýrství</a></li>
+				</ul>
+			</li>
+			<li><a href="#certifikat">Certifikát</a></li>
+			<li><a href="#bezpecnostniZasady">Bezpečnostní zásady</a></li>
+			<li><a href="#zaver">Závěr</a></li>
+		</ul>
+	</nav>
+
+	<div class="container">
+		<hr>
+		<h2 id="coJeWep">Co je WEP?</h2>
+		<p>Первый протокол безопасности был назван Wired Equivalent Privacy или WEP. Этот протокол оставался стандартом
+			безопасности с 1999 по 2004 год. Хотя эта версия протокола была создана для защиты, тем не менее, она имела
+			достаточно посредственный уровень безопасности и была сложна в настройке. В то время импорт
+			криптографических технологий был ограничен, а это означало, что многие производители могли использовать
+			только 64-битное шифрование. Это очень низкое битовое шифрование по сравнению с 128-битными или
+			256-битными опциями, доступными сегодня. В конечном счете, протокол WEP не стали развивать дальше.
+		</p>
+		<p class="source"><a href="#zdroje">[1]</a></p>
+		<hr>
+
+		<h2 id="coJeWpa">Co je WPA?</h2>
+		<p>Для улучшения функций WEP в 2003 году был создан протокол Wi-Fi Protected Access (защищенный Wi-Fi доступ).
+			Этот улучшенный протокол по-прежнему имел относительно низкую безопасность, но его легче было настроить.
+		</p>
+		<p>Технология WPA состоит из следующих компонентов:</p>
+		<ul>
+			<li>Протокол 802.1x — универсальный протокол для аутентификации, авторизации и учета (AAA)</li>
+			<li>Протокол EAP — расширяемый протокол аутентификации (Extensible Authentication Protocol)</li>
+			<li>Протокол TKIP — протокол временнОй целостности ключей, другой вариант перевода — протокол целостности
+				ключей во времени (Temporal Key Integrity Protocol)
+			</li>
+			<li>MIC — криптографическая проверка целостности пакетов (Message Integrity Code)</li>
+		</ul>
+		<p class="source"><a href="#zdroje">[2]</a></p>
+		<hr>
+
+		<h2 id="coJeWpa2">Co je WPA2?</h2>
+		<p>Технология WPA являлась временной мерой до ввода в эксплуатацию стандарта 802.11i.
+			Дальнейшим развитием этого протокола является WPA2. WPA2 определяется стандартом IEEE 802.11i, принятым в
+			июне 2004 года. В нём реализованы CCMP и шифрование AES (Advanced Encryption Standard), за счёт чего WPA2
+			стал более защищённым, чем его предшественник. CCMP (Counter Mode with Cipher Block Chaining Message
+			Authentication Code Protocol, протокол блочного шифрования с кодом аутентичности сообщения и режимом
+			сцепления блоков и счётчика) – протокол шифрования 802.11i, созданный для замены TKIP, обязательного
+			протокола шифрования WPA и WEP, как более надёжный вариант. В качестве алгоритма шифрования там применяется
+			усовершенствованный стандарт шифрования AES (Advanced Encryption Standard). А для управления и распределения
+			ключей по-прежнему применяется протокол 802.1x.
+		</p>
+		<p class="source"><a href="#zdroje">[3]</a>, <a href="#zdroje">[4]</a></p>
+		<hr>
+
+		<h2 id="coJeWpa3">Co je WPA3?</h2>
+		<p>WPA3 nabízí pokročilé možnosti šifrování vysoce citlivých dat, bezpečnost přenosu zajišťuje za pomoci
+			nejnovějších bezpečnostních metod a zároveň neumožňuje používání zastaralých protokolů. Ke svému fungování
+			naopak vyžaduje používání chráněných rámců správy (Protected Management Frames - PMF). Je dokonce možné je
+			nahrát na starší zařízení, pokud na ně výrobce myslí při sestavování bezpečnostních záplat. Musí jej však
+			podporovat i zařízení účastníka sítě, což by ale neměl být tak zásadní problém. WPA3 bez problémů
+			spolupracuje se zařízeními, kompatibilními s protokolem WPA2. V současné chvíli je zavedení tohoto protokolu
+			u zařízení volitelné, postupem času se stane povinným.</p>
+		<p class="source"><a href="#zdroje">[5]</a></p>
+		<hr>
+
+		<h2 id="spkVsEnterprise">WPA-PSK vs. WPA-Enterprise</h2>
+		<p><b>WPA-PSK</b> – этот вариант подойдет для домашнего использования. Для авторизации в сети нужен только ключ
+			безопасности. Когда нужно задать только пароль (ключ) и потом использовать его для подключения к Wi-Fi сети.
+			Используется один пароль для всех устройств. Сам пароль хранится на устройствах. Где его при необходимости
+			можно посмотреть, или сменить. При использовании WPA-PSK в настройках точки доступа и профилях беспроводного
+			соединения клиентов указывается общий ключ (Pre Shared Key) пароль длиной от 8 до 63 символов.
+		</p>
+		<p>В режиме WPA2-Personal из введённой открытым текстом парольной фразы генерируется 256-разрядный ключ PSK
+			(PreShared Key). Ключ PSK совместно с идентификатором SSID (Service Set Identifier) используются для
+			генерации временных сеансовых ключей PTK (Pairwise Transient Key), для взаимодействия беспроводных
+			устройств.</p>
+		<p>Обновление в WPA3 также позволило осуществить Simultaneous Authentication of Equals (SAE), которая заменила
+			Pre-shared Keys (PSK) в WPA2-Personal.</p>
+		<p><b>WPA-Enterprise</b> – в этом случае каждый пользователь получает уникальный пароль, который работает только
+			для его компьютера, т.к. авторизация пользователей проводится на отдельном RADIUS-сервере. Именно сервер
+			проверки подлинности 802.1X распределяет различные ключи каждому отдельному пользователю. Такой метод
+			считается более безопасным, поэтому используется исключительно на предприятиях, требующих
+			повышенный уровень безопасности, или в корпоративных сетях.</p>
+		<p>WPA3, в отличие от WPA2, предоставляет 192-битный пакет безопасности, который обеспечивает более надежную
+			систему безопасности для корпоративных сред.
+		</p>
+		<p class="source"><a href="#zdroje">[2]</a>, <a href="#zdroje">[6]</a>, <a href="#zdroje">[7]</a></p>
+		<hr>
+
+		<h2 id="slovniky">Slovníky</h2>
+		<p></p>
+		<p class="source"><a href="#zdroje">[1]</a></p>
+		<hr>
+
+		<h2 id="moznostiProlomeni">Možnosti prolomení</h2>
+		<h3 id="bruteForce">Brute-force</h3>
+		<h3 id="krack">Útok pomocí metody KRACK</h3>
+		<h3 id="ssid">Útok pomocí nastavení stejného SSID na falešném AP</h3>
+		<h3 id="socialIng">Krádež hesla pomoci sociálního inženýrství</h3>
+		<p class="source"><a href="#zdroje">[1]</a></p>
+		<hr>
+
+		<h2 id="certifikat">Certifikát</h2>
+		<p>Certifikát slouží k ověření identity. Dá se používat i pro identifikaci osob, ale my se s ním budeme setkávat
+			zejména jako s prostředkem pro ověření autenticity serveru, ke kterému se připojujeme.</p>
+		<p class="source"><a href="#zdroje">[8]</a></p>
+		<hr>
+
+		<h2 id="bezpecnostniZasady">Bezpečnostní zásady</h2>
+		<p>Для того, чтобы защитить корпоративную беспроводную сеть необходимо:</p>
+		<ul>
+			<li>Скрыть и сменить SSID, используемый по умолчанию, на какое-либо неосмысленное значение.</li>
+			<li>Ограничить мощность сигнала беспроводных устройств.</li>
+			<li>Не использовать WEP а развернуть шифрование WPA/WPA2 с использованием 802.1х.</li>
+			<li>Запретить клиентским рабочим станциям подключаться к доступным беспроводным сетям.</li>
+			<li>Изменить admin:admin на что-то посильнее.</li>
+			<li>Nepoužívat veřejné otevřené sítě.</li>
+		</ul>
+		<p class="source"><a href="#zdroje">[4]</a></p>
+		<hr>
+
+		<h2 id="zaver">Závěr</h2>
+		<p>Zabezpečení bezdrátové sítě se v průběhu času měnilo, aby se stalo spolehlivějším, ale současně i více
+			jednoduché z hlediska jeho nastavení. Ale bez ohledu na to, jak zlepšit protokoly nejdůležitější
+			zranitelnost bude vždy
+			zůstat člověkem. Nikdo není imunní vůči hackování phishingem nebo sociálním inženýrstvím, ale pokud budete
+			dodržovat výše uvedené zásady bezpečnosti, pak to pomůže chránit vaši síť před hacking.
+		</p>
+		<hr>
+	</div>
+</main>
+<footer>
+	<h2 id="zdroje">Zdroje</h2>
+	<p>[1] Dostupné z:
+		<a href="https://www.cloudav.ru/mediacenter/security/wpa-vs-wpa2/" target="_blank">
+			https://www.cloudav.ru/mediacenter/security/wpa-vs-wpa2/</a>
+	</p>
+	<p>[2] Dostupné z:
+		<a href="https://ru.bmstu.wiki/WPA_(Wi-Fi_Protected_Access)" target="_blank">
+			https://ru.bmstu.wiki/WPA_(Wi-Fi_Protected_Access)</a>
+	</p>
+	<p>[3] Dostupné z:
+		<a href="https://www.ixbt.com/comm/prac-wpa-eap.shtml" target="_blank">
+			https://www.ixbt.com/comm/prac-wpa-eap.shtml</a>
+	</p>
+	<p>[4] БИРЮКОВ, Андрей. Информационная безопасность: защита и нападение. 2-е изд. Москва: ДМК Пресс, 2017. ISBN
+		978-5-94074-647-8.
+	</p>
+	<p>[5] Dostupné z:
+		<a href="https://www.kvalitni-internet.cz/wpa3-bezpecnost-prihlasovani-k-wi-fi-sitim" target="_blank">
+			https://www.kvalitni-internet.cz/wpa3-bezpecnost-prihlasovani-k-wi-fi-sitim</a>
+	</p>
+	<p>[6] Dostupné z:
+		<a href="https://www.wi-fi.org/discover-wi-fi/security" target="_blank">
+			https://www.wi-fi.org/discover-wi-fi/security</a>
+	</p>
+	<p>[7] Dostupné z:
+		<a href="https://help-wifi.com/nastrojka-zashhity-wi-fi-setej/tip-bezopasnosti-i-shifrovaniya-besprovodnoj-seti-kakoj-vybrat/"
+		   target="_blank">
+			https://help-wifi.com/nastrojka-zashhity-wi-fi-setej/tip-bezopasnosti-i-shifrovaniya-besprovodnoj-seti-kakoj-vybrat/</a>
+	</p>
+	<p>[8] Dostupné z:
+		<a href="https://www.root.cz/clanky/jak-na-openssl/" target="_blank">
+			https://www.root.cz/clanky/jak-na-openssl/</a>
+	</p>
+
+</footer>
+</body>
+</html>
