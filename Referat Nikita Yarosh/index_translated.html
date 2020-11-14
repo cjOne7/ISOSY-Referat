@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta name="description" content="Cracking, hacking a obrana – WPA">
-	<meta name="author" content="Nikita Yarosh" lang="en">
+	<meta name="author" content="Nikita Yarosh">
 	<title>Cracking, hacking a obrana – WPA</title>
 
 	<style>
@@ -107,18 +107,19 @@
 			усовершенствованный стандарт шифрования AES (Advanced Encryption Standard). А для управления и распределения
 			ключей по-прежнему применяется протокол 802.1x.
 		</p>
-		<p class="source"><a href="#zdroje">[3]</a>, <a href="#zdroje">[4]</a></p>
+		<p class="source"><a href="#zdroje">[2]</a>, <a href="#zdroje">[3]</a></p>
 		<hr>
 
 		<h2 id="coJeWpa3">Co je WPA3?</h2>
-		<p>WPA3 nabízí pokročilé možnosti šifrování vysoce citlivých dat, bezpečnost přenosu zajišťuje za pomoci
+		<p>In 2018, the WiFi Alliance introduced WPA3. WPA3 nabízí pokročilé možnosti šifrování vysoce citlivých dat,
+			bezpečnost přenosu zajišťuje za pomoci
 			nejnovějších bezpečnostních metod a zároveň neumožňuje používání zastaralých protokolů. Ke svému fungování
 			naopak vyžaduje používání chráněných rámců správy (Protected Management Frames - PMF). Je dokonce možné je
 			nahrát na starší zařízení, pokud na ně výrobce myslí při sestavování bezpečnostních záplat. Musí jej však
 			podporovat i zařízení účastníka sítě, což by ale neměl být tak zásadní problém. WPA3 bez problémů
 			spolupracuje se zařízeními, kompatibilními s protokolem WPA2. V současné chvíli je zavedení tohoto protokolu
 			u zařízení volitelné, postupem času se stane povinným.</p>
-		<p class="source"><a href="#zdroje">[5]</a></p>
+		<p class="source"><a href="#zdroje">[1]</a>, <a href="#zdroje">[4]</a></p>
 		<hr>
 
 		<h2 id="spkVsEnterprise">WPA-PSK vs. WPA-Enterprise</h2>
@@ -126,23 +127,26 @@
 			безопасности. Когда нужно задать только пароль (ключ) и потом использовать его для подключения к Wi-Fi сети.
 			Используется один пароль для всех устройств. Сам пароль хранится на устройствах. Где его при необходимости
 			можно посмотреть, или сменить. При использовании WPA-PSK в настройках точки доступа и профилях беспроводного
-			соединения клиентов указывается общий ключ (Pre Shared Key) пароль длиной от 8 до 63 символов.
+			соединения клиентов указывается общий ключ (Pre-Shared Key) пароль длиной от 8 до 63 символов.
 		</p>
-		<p>В режиме WPA2-Personal из введённой открытым текстом парольной фразы генерируется 256-разрядный ключ PSK
-			(PreShared Key). Ключ PSK совместно с идентификатором SSID (Service Set Identifier) используются для
-			генерации временных сеансовых ключей PTK (Pairwise Transient Key), для взаимодействия беспроводных
-			устройств.</p>
-		<p>Обновление в WPA3 также позволило осуществить Simultaneous Authentication of Equals (SAE), которая заменила
-			Pre-shared Keys (PSK) в WPA2-Personal.</p>
-		<p><b>WPA-Enterprise</b> – в этом случае каждый пользователь получает уникальный пароль, который работает только
-			для его компьютера, т.к. авторизация пользователей проводится на отдельном RADIUS-сервере. Именно сервер
-			проверки подлинности 802.1X распределяет различные ключи каждому отдельному пользователю. Такой метод
-			считается более безопасным, поэтому используется исключительно на предприятиях, требующих
-			повышенный уровень безопасности, или в корпоративных сетях.</p>
-		<p>WPA3, в отличие от WPA2, предоставляет 192-битный пакет безопасности, который обеспечивает более надежную
-			систему безопасности для корпоративных сред.
+		<p>Обновление в WPA3 is enabled through Simultaneous Authentication of Equals (SAE), which replaces Pre-shared
+			Key (PSK) in WPA2-Personal. The technology is resistant to offline dictionary attacks where an adversary
+			attempts to determine a network password by trying possible passwords without further network
+			interaction.</p>
+		<p><b>WPA-Enterprise (WPA-802.1x, RADIUS)</b> – this mode provides the security needed for wireless networks in
+			business environments.
+			It is more complicated to set up, and it offers individualized and centralized control over access to your
+			Wi-Fi network. When users try to connect to the network, they need to present their login credentials.
+			This mode supports 802.1x RADIUS authentication and is appropriate in the cases where a RADIUS server is
+			deployed. WPA-Enterprise should only be used when a RADIUS server is connected for client authentication.
+			Users never deal with the actual encryption keys. They are securely created and assigned per user session in
+			the background after a user presents their login credentials. This prevents people from getting the network
+			key from computers.
 		</p>
-		<p class="source"><a href="#zdroje">[2]</a>, <a href="#zdroje">[6]</a>, <a href="#zdroje">[7]</a></p>
+		<p>WPA3-Enterprise also offers an optional mode using 192-bit minimum-strength security protocols and
+			cryptographic tools to better protect sensitive data.
+		</p>
+		<p class="source"><a href="#zdroje">[2]</a>, <a href="#zdroje">[5]</a>, <a href="#zdroje">[6]</a></p>
 		<hr>
 
 		<h2 id="slovniky">Slovníky</h2>
@@ -160,68 +164,69 @@
 
 		<h2 id="certifikat">Certifikát</h2>
 		<p>Certifikát slouží k ověření identity. Dá se používat i pro identifikaci osob, ale my se s ním budeme setkávat
-			zejména jako s prostředkem pro ověření autenticity serveru, ke kterému se připojujeme.</p>
-		<p class="source"><a href="#zdroje">[8]</a></p>
+			zejména jako s prostředkem pro ověření autenticity serveru, ke kterému se připojujeme. V SSL certifikát je
+			vždy podepsán. Buď může být podepsán sám sebou (tzv. Self-signed Certificate), nebo je
+			podepsán jiným certifikátem, tzv. certifikační autoritou (Certificate Authority, CA).
+			<br>Filozofie je taková, že do uživatelského SW jsou (pokud možno nějakým bezpečným způsobem) nahrány
+			certifikáty těch autorit, kterým uživatel věří.
+		</p>
+		<p class="source"><a href="#zdroje">[7]</a></p>
 		<hr>
 
 		<h2 id="bezpecnostniZasady">Bezpečnostní zásady</h2>
 		<p>Для того, чтобы защитить корпоративную беспроводную сеть необходимо:</p>
 		<ul>
-			<li>Скрыть и сменить SSID, используемый по умолчанию, на какое-либо неосмысленное значение.</li>
+			<li>Сменить ESSID, используемый по умолчанию, на какое-либо неосмысленное значение.</li>
 			<li>Ограничить мощность сигнала беспроводных устройств.</li>
 			<li>Не использовать WEP а развернуть шифрование WPA/WPA2 с использованием 802.1х.</li>
 			<li>Запретить клиентским рабочим станциям подключаться к доступным беспроводным сетям.</li>
 			<li>Изменить admin:admin на что-то посильнее.</li>
 			<li>Nepoužívat veřejné otevřené sítě.</li>
 		</ul>
-		<p class="source"><a href="#zdroje">[4]</a></p>
+		<p class="source"><a href="#zdroje">[3]</a></p>
 		<hr>
 
 		<h2 id="zaver">Závěr</h2>
-		<p>Zabezpečení bezdrátové sítě se v průběhu času měnilo, aby se stalo spolehlivějším, ale současně i více
-			jednoduché z hlediska jeho nastavení. Ale bez ohledu na to, jak zlepšit protokoly nejdůležitější
-			zranitelnost bude vždy
-			zůstat člověkem. Nikdo není imunní vůči hackování phishingem nebo sociálním inženýrstvím, ale pokud budete
-			dodržovat výše uvedené zásady bezpečnosti, pak to pomůže chránit vaši síť před hacking.
+		<p>Безопасность беспроводной сети менялась с течением времени, чтобы стать более надёжной, но при этом и более
+			простой с точки зрения её настройки. Но как бы не улучшались протоколы самой главной уязвимость всегда будет
+			оставаться человек. Никто не застрахован от взлома путём фишинга или социальной инженерии, но если вы будете
+			придерживаться выше перечисленных принципов безопасности, то это поможет защитить вашу сеть от взлома.
 		</p>
 		<hr>
 	</div>
 </main>
 <footer>
 	<h2 id="zdroje">Zdroje</h2>
-	<p>[1] Dostupné z:
-		<a href="https://www.cloudav.ru/mediacenter/security/wpa-vs-wpa2/" target="_blank">
-			https://www.cloudav.ru/mediacenter/security/wpa-vs-wpa2/</a>
+	<p>[1] WPA против WPA2: какой протокол безопасности WiFi вы должны использовать? <i>Panda
+		Security</i> [online]. 2020-04-10 [cit. 2020-11-13]. Dostupné z:
+		<a href="https://www.pandasecurity.com/en/mediacenter/security/wpa-vs-wpa2/" target="_blank">
+			https://www.pandasecurity.com/en/mediacenter/security/wpa-vs-wpa2/</a>
 	</p>
-	<p>[2] Dostupné z:
-		<a href="https://ru.bmstu.wiki/WPA_(Wi-Fi_Protected_Access)" target="_blank">
-			https://ru.bmstu.wiki/WPA_(Wi-Fi_Protected_Access)</a>
+	<p>[2] ЗАЙЦЕВ, Евгений. Защита беспроводных сетей, WPA: теория и&nbsp;практика (часть первая). <i>IXBT.com</i>
+		[online]. 2005-11-29 [cit. 2020-11-13]. Dostupné z:
+		<a href="https://www.ixbt.com/comm/prac-wpa-eap.shtml">https://www.ixbt.com/comm/prac-wpa-eap.shtml</a>
 	</p>
-	<p>[3] Dostupné z:
-		<a href="https://www.ixbt.com/comm/prac-wpa-eap.shtml" target="_blank">
-			https://www.ixbt.com/comm/prac-wpa-eap.shtml</a>
-	</p>
-	<p>[4] БИРЮКОВ, Андрей. Информационная безопасность: защита и нападение. 2-е изд. Москва: ДМК Пресс, 2017. ISBN
+	<p>[3] БИРЮКОВ, Андрей. Информационная безопасность: защита и нападение. 2-е изд. Москва: ДМК Пресс, 2017. ISBN
 		978-5-94074-647-8.
 	</p>
-	<p>[5] Dostupné z:
-		<a href="https://www.kvalitni-internet.cz/wpa3-bezpecnost-prihlasovani-k-wi-fi-sitim" target="_blank">
+	<p>[4] WPA3 a bezpečnost přihlašování k Wi-Fi sítím. <i>Kvalitní internet</i> [online]. 2019-03-25 [cit.
+		2020-11-13].
+		Dostupné z: <a href="https://www.kvalitni-internet.cz/wpa3-bezpecnost-prihlasovani-k-wi-fi-sitim"
+					   target="_blank">
 			https://www.kvalitni-internet.cz/wpa3-bezpecnost-prihlasovani-k-wi-fi-sitim</a>
 	</p>
-	<p>[6] Dostupné z:
+	<p>[5] Discover Wi-Fi. <i>Wi-Fi Alliance</i> [online]. c2020 [cit. 2020-11-13]. Dostupné z:
 		<a href="https://www.wi-fi.org/discover-wi-fi/security" target="_blank">
 			https://www.wi-fi.org/discover-wi-fi/security</a>
 	</p>
-	<p>[7] Dostupné z:
-		<a href="https://help-wifi.com/nastrojka-zashhity-wi-fi-setej/tip-bezopasnosti-i-shifrovaniya-besprovodnoj-seti-kakoj-vybrat/"
-		   target="_blank">
-			https://help-wifi.com/nastrojka-zashhity-wi-fi-setej/tip-bezopasnosti-i-shifrovaniya-besprovodnoj-seti-kakoj-vybrat/</a>
+	<p>[6] The differences between WPA-Personal and WPA-Enterprise. <i>TP-Link Corporation Limited</i> [online]. c2020
+		[cit. 2020-11-13]. Dostupné z: <a href="https://www.tp-link.com/cz/support/faq/500/" target="_blank">
+			https://www.tp-link.com/cz/support/faq/500/</a>
 	</p>
-	<p>[8] Dostupné z:
-		<a href="https://www.root.cz/clanky/jak-na-openssl/" target="_blank">
+	<p>[7] KÁRA, Michal. Jak na OpenSSL. <i>Root.cz</i> [online]. 2003-04-24 [cit. 2020-11-13]. ISSN 1212-8309. Dostupné
+		z: <a href="https://www.root.cz/clanky/jak-na-openssl/" target="_blank">
 			https://www.root.cz/clanky/jak-na-openssl/</a>
 	</p>
-
 </footer>
 </body>
 </html>
