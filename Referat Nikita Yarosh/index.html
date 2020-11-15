@@ -33,6 +33,12 @@
 			background-color: aquamarine;
 			padding: 1em;
 		}
+
+		.img {
+			width: 100%;
+			margin: 0 auto;
+		}
+
 	</style>
 </head>
 
@@ -75,9 +81,9 @@
 	<div class="container">
 		<hr>
 		<h2 id="coJeWep">Co je WEP?</h2>
-		<p>První bezpečnostní protokol byl nazván Wired Equivalent Privacy nebo WEP. Tento protokol zůstal
-			bezpečnostním standardem od roku 1999 do roku 2004. Ačkoli tato verze protokolu byla vytvořena pro ochranu,
-			přesto měla poměrně průměrnou úroveň zabezpečení a&nbsp;byla obtížně nastavitelná. V&nbsp;té době byl dovoz
+		<p>První bezpečnostní protokol byl nazván Wired Equivalent Privacy nebo WEP. Tento protokol byl bezpečnostním
+			standardem od roku 1999 do roku 2003. Ačkoli tato verze protokolu byla vytvořena pro ochranu, přesto měla
+			poměrně průměrnou úroveň zabezpečení a&nbsp;byla obtížně nastavitelná. V&nbsp;té době byl dovoz
 			kryptografických technologií omezen, což&nbsp;znamenalo, že&nbsp;mnoho výrobců mohlo používat pouze 64bitové
 			šifrování. Jedná se o&nbsp;velmi nízké bitové šifrování ve&nbsp;srovnání s&nbsp;128bitovými nebo
 			256bitovými možnostmi, které jsou dnes k&nbsp;dispozici. Nakonec protokol WEP nezačal dále rozvíjet.
@@ -86,7 +92,7 @@
 		<hr>
 
 		<h2 id="coJeWpa">Co je WPA?</h2>
-		<p>Pro&nbsp;zlepšení funkcí protokolu WEP byl v&nbsp;2003 roce vytvořen protokol Wi-Fi Protected Access
+		<p>Pro zlepšení funkcí protokolu WEP byl v&nbsp;roce 2003 vytvořen protokol Wi-Fi Protected Access
 			(chráněný přístup Wi-Fi). Tento vylepšený protokol měl stále relativně nízkou bezpečnost, ale bylo snadnější
 			jej nastavit.
 		</p>
@@ -107,7 +113,7 @@
 			tohoto protokolu je WPA2. WPA2 je definován standardem IEEE 802.11, který byl přijat v&nbsp;červnu 2004. V&nbsp;něm
 			jsou implementovány CCMP (Counter Mode with Cipher Block Chaining Message Authentication Code Protocol) a&nbsp;
 			šifrování AES (Advanced Encryption Standard), díky které WPA2 stal bezpečněji než jeho předchůdce. CCMP je
-			šifrovací protokol 802.11 i&nbsp;vytvořený jako náhrada za TKIP, povinný šifrovací protokol WPA a&nbsp;WEP
+			šifrovací protokol 802.11 i&nbsp;vytvořený jako náhrada za TKIP, povinný šifrovací protokol WPA a&nbsp;WEP,
 			jako spolehlivější možnost. Jako šifrovací algoritmus se tam používá pokročilý šifrovací standard AES. Pro
 			správu a&nbsp;distribuci klíčů se stále používá protokol 802.1x.
 		</p>
@@ -115,48 +121,39 @@
 		<hr>
 
 		<h2 id="coJeWpa3">Co je WPA3?</h2>
-		<p>V roce 2018 Wi-Fi Alliance představila WPA3. WPA3 nabízí pokročilé možnosti šifrování vysoce citlivých dat,
-			bezpečnost přenosu zajišťuje za pomoci nejnovějších bezpečnostních metod a&nbsp;zároveň neumožňuje používání
-			zastaralých protokolů. Ke svému fungování naopak vyžaduje používání chráněných rámců správy (Protected
-			Management Frames - PMF). Je dokonce možné je nahrát na starší zařízení, pokud na ně výrobce myslí při
+		<p>V&nbsp;roce 2018 Wi-Fi Alliance představila WPA3. WPA3 nabízí pokročilé možnosti šifrování vysoce citlivých
+			dat, bezpečnost přenosu zajišťuje za pomoci nejnovějších bezpečnostních metod a&nbsp;zároveň neumožňuje
+			používání zastaralých protokolů. Ke svému fungování naopak vyžaduje používání chráněných rámců správy
+			(Protected Management Frames). Je dokonce možné je nahrát na starší zařízení, pokud na ně výrobce myslí při
 			sestavování bezpečnostních záplat. Musí jej však podporovat i&nbsp;zařízení účastníka sítě, což by ale neměl
-			být
-			tak zásadní problém. WPA3 bez problémů spolupracuje se zařízeními, kompatibilními s&nbsp;protokolem WPA2. V&nbsp;
-			současné chvíli je zavedení tohoto protokolu u&nbsp;zařízení volitelné, postupem času se stane povinným.</p>
+			být tak zásadní problém. WPA3 bez problémů spolupracuje se zařízeními, kompatibilními s&nbsp;protokolem
+			WPA2. V&nbsp;současné chvíli je zavedení tohoto protokolu u&nbsp;zařízení volitelné, postupem času se stane
+			povinným.
+		</p>
 		<p class="source"><a href="#zdroje">[1]</a>, <a href="#zdroje">[4]</a></p>
 		<hr>
 
 		<h2 id="spkVsEnterprise">WPA-PSK vs.&nbsp;WPA-Enterprise</h2>
-		<p><b>WPA-PSK</b> — tato možnost je vhodná pro domácí použití. Chcete-li povolit síť, potřebujete pouze
-			bezpečnostní klíč. Když potřebujete zadat pouze heslo (klíč) a&nbsp;pak jej použít pro připojení k&nbsp;síti
-			Wi-Fi.
-			Používá se jedno heslo pro všechna zařízení. Samotné heslo je uloženo na zařízeních. Kde je v&nbsp;případě
-			potřeby vidět,nebo změnit. Při použití WPA-PSK je v&nbsp;nastavení přístupového bodu a&nbsp;profilů
-			bezdrátového
-			připojení klientů uvedeno sdílené heslo (Pre-Shared Key) o&nbsp;délce 8 až 63 znaků.
+		<p><b>WPA-PSK</b> — tato možnost je vhodná pro domácí použití. Pro autorizaci v&nbsp;síti potřebujete pouze
+			bezpečnostní klíč. Používá se jedno heslo pro všechna zařízení. Samotné heslo je uloženo na zařízeních. Kde
+			je v&nbsp;případě potřeby vidět nebo změnit. Při použití WPA-PSK je v&nbsp;nastavení přístupového bodu a&nbsp;profilů
+			bezdrátového připojení klientů uvedeno sdílené heslo (Pre-Shared Key) o&nbsp;délce 8 až 63&nbsp;znaků.
 		</p>
 		<p>WPA3-Personal přináší lepší ochranu jednotlivým uživatelům tím, že poskytuje robustnější autentizaci
 			založenou na heslech, i&nbsp;když uživatelé volí hesla, která nedosahují typických doporučení složitosti.
-			Tato
-			schopnost je povolena simultánní autentizací Equals (SAE), která nahrazuje Pre-Shared Key (PSK) ve&nbsp;WPA2-Personal.
-			Tato technologie je odolná vůči útokům offline slovníku, kdy se protivník pokouší určit
-			síťové heslo vyzkoušením možných hesel bez další interakce se sítí.</p>
-		<p><b>WPA-Enterprise (WPA-802.1x, RADIUS)</b> — tento režim poskytuje zabezpečení potřebné pro bezdrátové sítě v
-			podnikových prostředích. Nastavení je složitější a&nbsp;nabízí individualizovanou a&nbsp;centralizovanou
-			kontrolu nad
-			přístupem k&nbsp;síti Wi-Fi. Když se uživatelé pokusí připojit k&nbsp;síti, musí předložit své přihlašovací
-			údaje.
-			Tento režim podporuje ověřování poloměru 802.1 x a&nbsp;je vhodný v&nbsp;případech, kdy je nasazen server
-			RADIUS.
-			WPA-Enterprise by měla být použita pouze v&nbsp;případě, že je připojen server RADIUS pro ověření klienta.
-			Uživatelé se nikdy nezabývají skutečnými šifrovacími klíči. Jsou bezpečně vytvořeny a&nbsp;přiřazeny na
-			relaci
-			uživatele na pozadí poté, co uživatel předloží své přihlašovací údaje. To zabraňuje lidem získat síťový klíč
-			z počítačů.
+			Tato schopnost je povolena simultánní autentizací Equals (SAE), která nahrazuje Pre-Shared Key (PSK) ve&nbsp;WPA/WPA2-PSK.
+			Tato technologie je odolná vůči útokům offline slovníku, kdy se protivník pokouší určit síťové heslo
+			vyzkoušením možných hesel bez další interakce se sítí.</p>
+		<p><b>WPA-Enterprise (WPA-802.1x, RADIUS)</b> — tento režim poskytuje zabezpečení potřebné pro bezdrátové sítě v&nbsp;podnikových
+			prostředích. Nastavení je složitější a&nbsp;nabízí individualizovanou i&nbsp;centralizovanou kontrolu nad
+			přístupem k&nbsp;síti Wi-Fi. Když se uživatelé pokusí připojit k&nbsp;síti, musí předložit své
+			přihlašovací údaje. WPA-Enterprise by měla být použita pouze v&nbsp;případě, že je připojen server
+			RADIUS (Remote Authentication Dial In User Service) pro ověření klienta. Uživatelé se nikdy nezabývají
+			skutečnými šifrovacími klíči. Jsou bezpečně vytvořeny a&nbsp;přiřazeny na relaci uživatele na pozadí poté,
+			co uživatel předloží své přihlašovací údaje. To zabraňuje lidem získat síťový klíč z&nbsp;počítačů.
 		</p>
-		<p>WPA3-Enterprise také nabízí volitelný režim pomocí 192bitových bezpečnostních protokolů s&nbsp;minimální
-			pevností
-			a kryptografické nástroje pro lepší ochranu citlivých dat.
+		<p>WPA3-Enterprise také nabízí volitelný režim pomocí 192bitových bezpečnostních protokolů jako minimální
+			pevnost a&nbsp;kryptografické nástroje pro lepší ochranu citlivých dat.
 		</p>
 		<p class="source"><a href="#zdroje">[2]</a>, <a href="#zdroje">[5]</a>, <a href="#zdroje">[6]</a></p>
 		<hr>
@@ -178,7 +175,7 @@
 		</p>
 
 		<h3 id="crunch">Generovaní slovníku pomocí programu crunch</h3>
-		<p>Tento řádek slouží k&nbsp;vypisování seznamu všech možností komand v&nbsp;programu crunch.</p>
+		<p>Tento řádek slouží k&nbsp;vypisování seznamu všech možností kombinací komand v&nbsp;programu crunch.</p>
 		<p class="code"># man crunch</p>
 		<p>Základní syntaxe pro crunch vypadá takto:</p>
 		<p class="code"># crunch <i>minimální_počet_symbolů</i> <i>maximální_počet_symbolů</i> <i>symboly</i> -t <i>pattern</i>
@@ -193,18 +190,19 @@
 		</ul>
 		<p>Příklad využití:</p>
 		<p class="code"># crunch 4 4 abc + 123 -t @@%% -o pwd.txt</p>
-		<p>Příkaz bude generovat řetězce o&nbsp;délce 4 symbolů, prvních 2 symbolů budou od &bdquo;aa&ldquo; do &bdquo;cc&ldquo;
-			a ostatní 2 znaků od &bdquo;11&ldquo; do &bdquo;33&ldquo;. Výsledek bude uložen do souboru &bdquo;pwd.txt&ldquo;.</p>
+		<p>Příkaz bude generovat řetězce o&nbsp;délce 4&nbsp;symbolů, prvních 2&nbsp;symbolů budou od &bdquo;aa&ldquo;
+			do &bdquo;cc&ldquo; a&nbsp;ostatní 2&nbsp;znaků od &bdquo;11&ldquo; do &bdquo;33&ldquo;. Výsledek bude
+			uložen do souboru &bdquo;pwd.txt&ldquo;.
+		</p>
 
 		<h3 id="passwords">Generovaní slovníku pomocí skriptu z&nbsp;repositáře GitHubu
 			<a href="https://github.com/Bitwise-01/Passwords">Passwords</a>
 		</h3>
 		<p>Zpočátku není známo ani kolik znaků tvoří zvolené heslo oběti. Právě z&nbsp;tohoto důvodu útočníci velmi
-			zřídka
-			používají veřejné slovníky. Zde je již třeba využít dovednosti sociálního inženýrství. Přesněji řečeno,
-			stačí k&nbsp;často používaným možnostem přidat informace o&nbsp;oběti: jméno, příjmení, datum narození atd.
-			To pomůže
-			mnohokrát zvýšit šanci na úspěšný útok. Níže budou uvedeny příkazy pro implementaci této metody.</p>
+			zřídka používají veřejné slovníky. Zde je již třeba využít dovednosti sociálního inženýrství. Přesněji
+			řečeno, stačí k&nbsp;často používaným možnostem přidat informaci o&nbsp;oběti: jméno, příjmení, datum
+			narození atd. To pomůže mnohokrát zvýšit šanci na úspěšný útok. Níže budou uvedeny příkazy pro implementaci
+			této metody.</p>
 		<p>Stáhněte všechny kódy z&nbsp;Githubu.</p>
 		<p class="code"># git clone https://github.com/Bitwise-01/Passwords.git</p>
 		<p>Přejděte do složky staženého projektu.</p>
@@ -212,7 +210,7 @@
 		<p>Spusťte požadovaný skript.</p>
 		<p class="code"># python3 passgen.py</p>
 		<p>Program nám nabídne zadát klíčová slova pro přidání do generátoru. Zadejte něco a&nbsp;stiskněte Enter. Pro
-			ukončení napište generate.</p>
+			ukončení napište <i>generate</i>.</p>
 		<p class="code"># generate</p>
 		<p>Podívejte se na výsledky.</p>
 		<p class="code"># cat pass.txt</p>
@@ -225,18 +223,28 @@
 		<h2 id="moznostiProlomeni">Možnosti prolomení</h2>
 
 		<h3 id="bruteForce">Útok pomocí metody Brute-force</h3>
-		<p></p>
+		<p>Jakmile jste vytvořili slovník je třeba najít jemu použití. Pro tyto účely je vhodné nainstalovat program
+			<a href="http://stascorp.com/load/1-1-0-56" target="_blank">Router Scan</a>. Tento nastroj může nabídnout
+			vám skenování rozsahu IP adres, hledání na kartě podle BSSIDu, připojení k&nbsp;nastavení směrovače atd.
+			Další důležitou výhodou je snadné učení ovladání a&nbsp;k&nbsp;tomu nepotřebujete mít žadné instrukce. Ale
+			nas zajímá prolomení hesla hrubou silou. Nevyhodou bude pomala rychlost a&nbsp;proto byste potřebovali vědět
+			základní udaje o&nbsp;oběti pro generování úzké zaměřeného slovníka.
+		</p>
+		<img src="images/bruteforce.jpg" alt="Jak najit metodu útoku hrubou silou v&nbsp;programu Router Scan"
+			 class="img">
+		<p style="text-align: center">Obr.&nbsp;1 — Jak najit metodu útoku hrubou silou v&nbsp;programu Router Scan</p>
+		<img src="images/load_dictionary.jpg" alt="Kam načíst slovník" width="514">
+		<p style="text-align: center">Obr.&nbsp;2 — Kam načíst slovník</p>
 
 		<h3 id="krack">Útok pomocí metody KRACK</h3>
 		<p>Útok se nazývá KRACK, což je zkratka pro Key Reinstallation Attacks. Manipuluje s&nbsp;úvodním čtyřcestným
 			handshakem, který je použit pro výměnu šifrovacího klíče používaného během další komunikace. KRACK zneužívá
-			chyby ve&nbsp;třetím kroku, kdy je možné klíč poslat několikrát. Pokud je to uděláno správným způsobem, může
-			být
-			úvodní nonce použit tak, že to kompletně boří bezpečnost šifrování. Nejčastěji se pro tuto metodu používá
-			program Aircrack-ng, ale pro využití síťová karta vašeho počítače musí podporovat režim sledování. Podrobný
-			návod
-			<a href="https://www.aircrack-ng.org/doku.php?id=cracking_wpa" target="_blank">jak prolomit WPA</a> pomocí
-			linuxové verze naleznete na oficiálních stránkách.</p>
+			chyby ve třetím kroku, kdy je možné klíč poslat několikrát. Pokud je to uděláno správným způsobem, může
+			být úvodní nonce použit tak, že to kompletně boří bezpečnost šifrování. Nejčastěji se pro tuto metodu
+			používá program Aircrack-ng, ale pro využití síťová karta vašeho počítače musí podporovat režim sledování.
+			Podrobný návod
+			<a href="https://www.aircrack-ng.org/doku.php?id=cracking_wpa" target="_blank">jak prolomit WPA</a>
+			pomocí linuxové verze naleznete na oficiálních stránkách.</p>
 		<p>Doporučuji se také seznámit s&nbsp;níže uvedenými články:</p>
 		<ul>
 			<li><a href="https://www.root.cz/clanky/odposlouchavani-a-prolamovani-wi-fi-siti-zabezpecenych-pomoci-wpa2/"
@@ -254,27 +262,23 @@
 		<p>Při nastavení bezdrátového adaptéru pro automatické připojení k&nbsp;známým bezdrátovým sítím hrozí, že se
 			uživatel stane obětí útoku Man-in-the-Middle. Útočník může vytvořit AP s&nbsp;identickým SSID. V&nbsp;důsledku
 			toho se klientská zařízení se automaticky napojí k&nbsp;takový AP a&nbsp;bude pracovat přes něj, a&nbsp;útočník
-			bude mít
-			možnost zachytit veškerá návštěvnost své oběti, a&nbsp;to buď útoku na zařízení, která s&nbsp;ním v&nbsp;jednom
-			segmentu
-			sítě.</p>
-		<p>Například 28. května 2015 hackeři kolem 11:30 prolomili bezplatné Wi-Fi sítě moskevského metra. Výsledkem je,
-			že tisíce cestujících viděly porno na obrazovkách svých telefonů a&nbsp;tabletů namísto obvyklé úvodní
-			stránky a&nbsp;výzvy k&nbsp;přihlášení do sítě.</p>
+			bude mít možnost zachytit veškerá návštěvnost své oběti, a&nbsp;to buď útoku na zařízení, která s&nbsp;ním v&nbsp;jednom
+			segmentu sítě.</p>
+		<p>Například 28.&nbsp;května 2015 hackeři prolomili bezplatné Wi-Fi sítě moskevského metra. Výsledkem je,
+			že tisíce cestujících viděly porno na obrazovkách svých telefonů a&nbsp;tabletů namísto úvodní stránky a&nbsp;výzvy
+			k&nbsp;přihlášení do sítě.</p>
 
 		<h3 id="socialIng">Krádež hesla pomoci sociálního inženýrství</h3>
-		<p>Definovat jednoznačně termín sociálním inženýrství je poměrně složité. Obecně se dá říct, že jde o&nbsp;způsob
+		<p>Definovat jednoznačně termín sociálním inženýrství je poměrně složité. Obecně se dá říct, že jde o&nbsp;způsobu
 			získávání užitečných informací od různých lidí, kdy tito lidé netuší, že se stávají cílem útoku. Jsou pak
 			ochotni vyzradit například své osobní údaje, přístupová hesla čí jiné informace, které mohou útočníkovi
-			pomoci získat neautorizovaný přístup do zabezpečeného systému, případně využít tyto informace k&nbsp;podvodu
-			či
-			odcizení něčí identity.</p>
+			pomoc získat neautorizovaný přístup do zabezpečeného systému, případně využít tyto informace k&nbsp;podvodu
+			či odcizení něčí identity.</p>
 		<p>Hlavní myšlenka sociálního inženýrství je tedy následující: proč se obtěžovat s&nbsp;používáním technických
 			prostředků a&nbsp;různých nástrojů k&nbsp;prolamování hesel, když je nejjednodušší někoho přimět k&nbsp;tomu,
-			aby
-			toto
-			heslo řekl sám? Ne nadarmo se říká, že nejslabším článkem každého bezpečnostního systému je člověk. A&nbsp;právě
-			sociální inženýrství této skutečnosti využívá, či lépe řečeno zneužívá.</p>
+			aby toto heslo řekl sám? Ne nadarmo se říká, že nejslabším článkem každého bezpečnostního systému je člověk.
+			A&nbsp;právě sociální inženýrství této skutečnosti využívá.
+		</p>
 
 		<p class="source"><a href="#zdroje">[10]</a>, <a href="#zdroje">[11]</a>, <a href="#zdroje">[12]</a></p>
 		<hr>
@@ -284,8 +288,6 @@
 			budeme setkávat zejména jako s&nbsp;prostředkem pro ověření autenticity serveru, ke kterému se připojujeme.
 			V&nbsp;SSL certifikát je vždy podepsán. Buď může být podepsán sám sebou (tzv.&nbsp;Self-signed Certificate),
 			nebo je podepsán jiným certifikátem, tzv.&nbsp;certifikační autoritou (Certificate Authority).
-			<br>Filozofie je taková, že do uživatelského SW jsou (pokud možno nějakým bezpečným způsobem) nahrány
-			certifikáty těch autorit, kterým uživatel věří.
 		</p>
 		<p class="source"><a href="#zdroje">[13]</a></p>
 		<hr>
