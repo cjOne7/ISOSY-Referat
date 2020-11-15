@@ -214,9 +214,23 @@
 		<h2 id="moznostiProlomeni">Možnosti prolomení</h2>
 		<h3 id="bruteForce">Brute-force</h3>
 		<h3 id="krack">Útok pomocí metody KRACK</h3>
+		<p>Útok se nazývá KRACK, což je zkratka pro Key Reinstallation Attacks. Manipuluje s úvodním čtyřcestným
+			handshakem, který je použit pro výměnu šifrovacího klíče používaného během další komunikace. KRACK zneužívá
+			chyby ve třetím kroku, kdy je možné klíč poslat několikrát. Pokud je to uděláno správným způsobem, může být
+			úvodní nonce použit tak, že to kompletně boří bezpečnost šifrování. Vice můžete přečíst
+			<a href="https://www.krackattacks.com/" target="_blank">zde</a>.</p>
 		<h3 id="ssid">Útok pomocí nastavení stejného SSID na falešném AP</h3>
 		<h3 id="socialIng">Krádež hesla pomoci sociálního inženýrství</h3>
-		<p class="source"><a href="#zdroje">[1]</a></p>
+		<p>Definovat jednoznačně termín sociálním inženýrství je poměrně složité. Obecně se dá říct, že jde o způsob
+			získávání užitečných informací od různých lidí, kdy tito lidé netuší, že se stávají cílem útoku. Jsou pak
+			ochotni vyzradit například své osobní údaje, přístupová hesla čí jiné informace, které mohou útočníkovi
+			pomoci získat neautorizovaný přístup do zabezpečeného systému, případně využít tyto informace k podvodu či
+			odcizení něčí identity.</p>
+		<p>Hlavní myšlenka sociálního inženýrství je tedy následující: proč se obtěžovat s používáním technických
+			prostředků a různých nástrojů k prolamování hesel, když je nejjednodušší někoho přimět k tomu, aby toto
+			heslo řekl sám? Ne nadarmo se říká, že nejslabším článkem každého bezpečnostního systému je člověk. A právě
+			sociální inženýrství této skutečnosti využívá, či lépe řečeno zneužívá.</p>
+		<p class="source"><a href="#zdroje">[10]</a>, <a href="#zdroje">[11]</a></p>
 		<hr>
 
 		<h2 id="certifikat">Certifikát</h2>
@@ -227,7 +241,7 @@
 			<br>Filozofie je taková, že do uživatelského SW jsou (pokud možno nějakým bezpečným způsobem) nahrány
 			certifikáty těch autorit, kterým uživatel věří.
 		</p>
-		<p class="source"><a href="#zdroje">[10]</a></p>
+		<p class="source"><a href="#zdroje">[15]</a></p>
 		<hr>
 
 		<h2 id="bezpecnostniZasady">Bezpečnostní zásady</h2>
@@ -297,7 +311,17 @@
 			https://www.youtube.com/watch?v=oG0gZ5y6a78&ab_channel=HackinginRussian</a>.
 		Kanál uživatele Hacking in Russian.
 	</p>
-	<p>[10] KÁRA, Michal. Jak na OpenSSL. <i>Root.cz</i> [online]. 2003-04-24 [cit. 2020-11-13]. ISSN 1212-8309.
+	<p>[10] KRČMÁŘ, Petr. Šifrování WPA2 prolomeno, Wi-Fi sítě je možné odposlouchávat. <i>Root.cz</i> [online].
+		2017-10-16 [cit. 2020-11-13]. ISSN 1212-8309. Dostupné z:
+		<a href="https://www.root.cz/clanky/jak-na-openssl/"
+		   target="_blank">https://www.root.cz/clanky/jak-na-openssl/</a>
+	</p>
+	<p>[11] BUDAI, David. Sociální inženýrství v praxi: když si hacker o heslo prostě řekne. <i>cnews.cz</i> [online].
+		2012-04-02 [cit. 2020-11-13]. Dostupné z:
+		<a href="https://www.cnews.cz/socialni-inzenyrstvi-v-praxi-kdyz-si-hacker-o-heslo-proste-rekne/"
+		   target="_blank">https://www.cnews.cz/socialni-inzenyrstvi-v-praxi-kdyz-si-hacker-o-heslo-proste-rekne/</a>
+	</p>
+	<p>[15] KÁRA, Michal. Jak na OpenSSL. <i>Root.cz</i> [online]. 2003-04-24 [cit. 2020-11-13]. ISSN 1212-8309.
 		Dostupné z: <a href="https://www.root.cz/clanky/jak-na-openssl/" target="_blank">
 			https://www.root.cz/clanky/jak-na-openssl/</a>
 	</p>
